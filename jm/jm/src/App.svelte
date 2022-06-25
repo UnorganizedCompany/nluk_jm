@@ -31,9 +31,9 @@
 		font-weight: 100;
 	}
 
-	@media (min-width: 640px) {
+	@media (min-width: 400px) {
 		main {
-			max-width: none;
+			max-width: 400px;
 		}
 	}
 </style>

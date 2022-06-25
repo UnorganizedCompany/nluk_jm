@@ -1,6 +1,4 @@
 <script>
-    let name = "world";
-
     let drop_zone;
     let objects = [
         { el: null, id: "ㅂ" },
@@ -34,7 +32,7 @@
     ];
 
     let dropped = [];
-    let status = "";
+    let text = "";
 
     let dropped_in = "";
     let activeEvent = "";
@@ -42,12 +40,10 @@
     let originalY = "";
 
     function handleDragEnter(e) {
-        status = "You are dragging over the " + e.target.getAttribute("id");
     }
 
     function handleDragLeave(e) {
-        status = "You left the " + e.target.getAttribute("id");
-    }
+     }
 
     function handleDragDrop(e) {
         e.preventDefault();
@@ -105,6 +101,7 @@
                 )
             ) {
                 dropped = dropped.concat(e.target.id);
+                text += e.target.id;
                 e.target.style.position = "initial";
                 dropped_in = true;
                 status =
@@ -130,7 +127,6 @@
 </script>
 
 <h1>새 글</h1>
-
 <div
     on:dragenter={handleDragEnter}
     on:dragleave={handleDragLeave}
@@ -139,11 +135,12 @@
     id="drop_zone"
     ondragover="return false"
 >
-    {#each objects.filter((v) => dropped.includes(`${v.id}`)) as { id }, i}
-        <div class="objects" {id} style="cursor: auto">
-            Object {id}
-        </div>
+{text}
+<!--
+    {#each dropped as d }
+        <h1>{d}</h1>
     {/each}
+    -->
 </div>
 
 <img src={keyboardSrc} alt="keyboard" width="400px" />
@@ -181,7 +178,7 @@
     style="position:absolute;top:312px;right:332px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[1].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -195,7 +192,7 @@
     style="position:absolute;top:312px;right:292px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[2].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -209,7 +206,7 @@
     style="position:absolute;top:312px;right:252px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[3].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -223,7 +220,7 @@
     style="position:absolute;top:312px;right:212px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[4].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -237,7 +234,7 @@
     style="position:absolute;top:312px;right:172px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[5].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -251,7 +248,7 @@
     style="position:absolute;top:312px;right:132px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[6].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -265,7 +262,7 @@
     style="position:absolute;top:312px;right:92px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[7].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -279,7 +276,7 @@
     style="position:absolute;top:312px;right:52px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[8].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -294,7 +291,7 @@
     style="position:absolute;top:370px;right:392px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[9].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -308,7 +305,7 @@
     style="position:absolute;top:370px;right:352px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[10].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -322,7 +319,7 @@
     style="position:absolute;top:370px;right:312px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[11].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -336,7 +333,7 @@
     style="position:absolute;top:370px;right:272px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[12].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -350,7 +347,7 @@
     style="position:absolute;top:370px;right:232px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[13].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -364,7 +361,7 @@
     style="position:absolute;top:370px;right:192px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[14].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -378,7 +375,7 @@
     style="position:absolute;top:370px;right:152px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[15].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -392,7 +389,7 @@
     style="position:absolute;top:370px;right:112px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[16].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -406,7 +403,7 @@
     style="position:absolute;top:370px;right:72px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[17].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -420,7 +417,7 @@
     style="position:absolute;top:428px;right:352px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[18].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -434,7 +431,7 @@
     style="position:absolute;top:428px;right:312px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[19].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -448,7 +445,7 @@
     style="position:absolute;top:428px;right:272px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[20].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -462,7 +459,7 @@
     style="position:absolute;top:428px;right:232px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[21].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -476,7 +473,7 @@
     style="position:absolute;top:428px;right:192px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[22].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -490,7 +487,7 @@
     style="position:absolute;top:428px;right:152px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[23].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -504,7 +501,7 @@
     style="position:absolute;top:428px;right:112px"
     class="objects"
     draggable="true"
-    bind:this={objects[0].el}
+    bind:this={objects[24].el}
     on:dragstart={handleDragStart}
     on:dragend={handleDragEnd}
     on:touchstart={handleTouchStart}
@@ -534,7 +531,8 @@
     :global(html),
     :global(body) {
         margin: 0;
-        height: 100%;
+        width: 492px;
+        height: 677px;
         overflow: hidden;
         user-select: none;
         -webkit-user-select: none;
@@ -544,7 +542,7 @@
         background-color: #eee;
         border: #999 1px solid;
         width: 400px;
-        height: 200px;
+        height: 198px;
         padding: 8px;
         font-size: 19px;
     }

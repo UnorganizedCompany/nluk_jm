@@ -1,5 +1,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    import { list } from "../store"
+    if (!localStorage.list) {
+        localStorage.list = JSON.stringify(["first twit", "second one"])
+        list = JSON.parse(localStorage.list)
+    }
+    var list = JSON.parse(localStorage.list)
+    if (!list) {
+        localStorage.list = JSON.stringify(["first twit", "second one"])
+        list = JSON.parse(localStorage.list)
+    }
 </script>
 
 <div align="left" style="margin-bottom: 50px">
@@ -7,7 +15,7 @@
 </div>
 <table class="table table-hover">
     <tbody align="left">
-        {#each Object.values($list) as row}
+        {#each Object.values(list) as row}
         <tr>
             <td>{row}</td>
         </tr>

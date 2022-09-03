@@ -1,4 +1,5 @@
 <script>
+
     let drop_zone;
     let objects = [
         { el: null, id: "q" },
@@ -155,6 +156,16 @@
         if (x2 - x1 > 2*w) return false;
         if (y2 - y1 > 2*h) return false;
         return true;
+    }
+
+    function onReturnClicked() {
+        console.log("return clicked")
+        console.log(text)
+        var list = JSON.parse(localStorage.list)
+        list.push(text)
+        localStorage.list = JSON.stringify(list)
+        
+        window.location.href = "/"
     }
 
     let keyboardSrc = "keyboard2.png";
@@ -550,6 +561,7 @@
     style="position:absolute;top:480px;right:52px"
     class="return"
     draggable="true"
+    on:click={onReturnClicked}
     bind:this={objects[25].el}
 >
     return

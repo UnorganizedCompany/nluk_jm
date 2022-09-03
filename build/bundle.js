@@ -1673,7 +1673,7 @@ var app = (function () {
     		var list = JSON.parse(localStorage.pseudo_twitter_list);
     		list.push(text);
     		localStorage.pseudo_twitter_list = JSON.stringify(list);
-    		window.location.href = "/";
+    		window.location.href = "/nluk_jm";
     	}
 
     	let keyboardSrc = "keyboard2.png";

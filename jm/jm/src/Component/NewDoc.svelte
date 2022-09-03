@@ -161,9 +161,9 @@
     function onReturnClicked() {
         console.log("return clicked")
         console.log(text)
-        var list = JSON.parse(localStorage.list)
+        var list = JSON.parse(localStorage.pseudo_twitter_list)
         list.push(text)
-        localStorage.list = JSON.stringify(list)
+        localStorage.pseudo_twitter_list = JSON.stringify(list)
         
         window.location.href = "/"
     }

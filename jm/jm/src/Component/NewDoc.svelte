@@ -159,8 +159,9 @@
 
     let keyboardSrc = "keyboard2.png";
 </script>
-
-<h1>새 글</h1>
+<div align="left" style="margin-bottom: 20px">
+    <img src="logo.png" width=200 draggable="false"/>
+</div>
 <div
     on:dragenter={handleDragEnter}
     on:dragleave={handleDragLeave}

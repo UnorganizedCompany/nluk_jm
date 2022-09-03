@@ -1,34 +1,34 @@
 <script>
     let drop_zone;
     let objects = [
-        { el: null, id: "ㅂ" },
-        { el: null, id: "ㅈ" },
-        { el: null, id: "ㄷ" },
-        { el: null, id: "ㄱ" },
-        { el: null, id: "ㅅ" },
-        { el: null, id: "ㅛ" },
-        { el: null, id: "ㅕ" },
-        { el: null, id: "ㅑ" },
-        { el: null, id: "ㅐ" },
-        { el: null, id: "ㅔ" },
+        { el: null, id: "q" },
+        { el: null, id: "w" },
+        { el: null, id: "e" },
+        { el: null, id: "r" },
+        { el: null, id: "t" },
+        { el: null, id: "y" },
+        { el: null, id: "u" },
+        { el: null, id: "i" },
+        { el: null, id: "o" },
+        { el: null, id: "p" },
 
-        { el: null, id: "ㅁ" },
-        { el: null, id: "ㄴ" },
-        { el: null, id: "ㅇ" },
-        { el: null, id: "ㄹ" },
-        { el: null, id: "ㅎ" },
-        { el: null, id: "ㅗ" },
-        { el: null, id: "ㅓ" },
-        { el: null, id: "ㅏ" },
-        { el: null, id: "ㅣ" },
+        { el: null, id: "a" },
+        { el: null, id: "s" },
+        { el: null, id: "d" },
+        { el: null, id: "f" },
+        { el: null, id: "g" },
+        { el: null, id: "h" },
+        { el: null, id: "j" },
+        { el: null, id: "k" },
+        { el: null, id: "l" },
 
-        { el: null, id: "ㅋ" },
-        { el: null, id: "ㅌ" },
-        { el: null, id: "ㅊ" },
-        { el: null, id: "ㅍ" },
-        { el: null, id: "ㅠ" },
-        { el: null, id: "ㅜ" },
-        { el: null, id: "ㅡ" },
+        { el: null, id: "z" },
+        { el: null, id: "x" },
+        { el: null, id: "c" },
+        { el: null, id: "v" },
+        { el: null, id: "b" },
+        { el: null, id: "n" },
+        { el: null, id: "m" },
     ];
 
     let dropped = [];
@@ -75,8 +75,8 @@
 
     function handleTouchMove(e) {
         let touchLocation = e.targetTouches[0];
-        let pageX = Math.floor(touchLocation.pageX - 50) + "px";
-        let pageY = Math.floor(touchLocation.pageY - 50) + "px";
+        let pageX = Math.floor(touchLocation.pageX -10) + "px";
+        let pageY = Math.floor(touchLocation.pageY -10) + "px";
         status = "Touch x " + pageX + " Touch y " + pageY;
         e.target.style.position = "absolute";
         e.target.style.left = pageX;
@@ -111,7 +111,6 @@
             } else {
                 e.target.style.left = originalX;
                 e.target.style.top = originalY;
-                status = "You let the " + e.target.getAttribute("id") + " go.";
             }
         }
     }
@@ -123,7 +122,7 @@
         return true;
     }
 
-    let keyboardSrc = "keyboard.jpg";
+    let keyboardSrc = "keyboard2.png";
 </script>
 
 <h1>새 글</h1>
@@ -146,7 +145,7 @@
 <img src={keyboardSrc} alt="keyboard" width="400px" />
 
 <div
-    id="ㅂ"
+    id="q"
     style="position:absolute;top:312px;right:412px"
     class="objects"
     draggable="true"
@@ -157,10 +156,10 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅂ
+    q
 </div>
 <div
-    id="ㅈ"
+    id="w"
     style="position:absolute;top:312px;right:372px"
     class="objects"
     draggable="true"
@@ -171,10 +170,10 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅈ
+    w
 </div>
 <div
-    id="ㄷ"
+    id="e"
     style="position:absolute;top:312px;right:332px"
     class="objects"
     draggable="true"
@@ -185,10 +184,10 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㄷ
+    e
 </div>
 <div
-    id="ㄱ"
+    id="r"
     style="position:absolute;top:312px;right:292px"
     class="objects"
     draggable="true"
@@ -199,10 +198,10 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㄱ
+    r
 </div>
 <div
-    id="ㅅ"
+    id="t"
     style="position:absolute;top:312px;right:252px"
     class="objects"
     draggable="true"
@@ -213,10 +212,10 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅅ
+    t
 </div>
 <div
-    id="ㅛ"
+    id="y"
     style="position:absolute;top:312px;right:212px"
     class="objects"
     draggable="true"
@@ -227,10 +226,10 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅛ
+    y
 </div>
 <div
-    id="ㅕ"
+    id="u"
     style="position:absolute;top:312px;right:172px"
     class="objects"
     draggable="true"
@@ -241,10 +240,10 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅕ
+    u
 </div>
 <div
-    id="ㅑ"
+    id="i"
     style="position:absolute;top:312px;right:132px"
     class="objects"
     draggable="true"
@@ -255,10 +254,10 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅑ
+    i
 </div>
 <div
-    id="ㅐ"
+    id="o"
     style="position:absolute;top:312px;right:92px"
     class="objects"
     draggable="true"
@@ -269,10 +268,10 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅐ
+    o
 </div>
 <div
-    id="ㅔ"
+    id="p"
     style="position:absolute;top:312px;right:52px"
     class="objects"
     draggable="true"
@@ -283,12 +282,12 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅔ
+    p
 </div>
 
 <div
-    id="ㅁ"
-    style="position:absolute;top:370px;right:392px"
+    id="a"
+    style="position:absolute;top:365px;right:392px"
     class="objects"
     draggable="true"
     bind:this={objects[9].el}
@@ -298,11 +297,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅁ
+    a
 </div>
 <div
-    id="ㄴ"
-    style="position:absolute;top:370px;right:352px"
+    id="s"
+    style="position:absolute;top:365px;right:352px"
     class="objects"
     draggable="true"
     bind:this={objects[10].el}
@@ -312,11 +311,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㄴ
+    s
 </div>
 <div
-    id="ㅇ"
-    style="position:absolute;top:370px;right:312px"
+    id="d"
+    style="position:absolute;top:365px;right:312px"
     class="objects"
     draggable="true"
     bind:this={objects[11].el}
@@ -326,11 +325,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅇ
+    d
 </div>
 <div
-    id="ㄹ"
-    style="position:absolute;top:370px;right:272px"
+    id="f"
+    style="position:absolute;top:365px;right:272px"
     class="objects"
     draggable="true"
     bind:this={objects[12].el}
@@ -340,11 +339,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㄹ
+    f
 </div>
 <div
-    id="ㅎ"
-    style="position:absolute;top:370px;right:232px"
+    id="g"
+    style="position:absolute;top:365px;right:232px"
     class="objects"
     draggable="true"
     bind:this={objects[13].el}
@@ -354,11 +353,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅎ
+    g
 </div>
 <div
-    id="ㅗ"
-    style="position:absolute;top:370px;right:192px"
+    id="h"
+    style="position:absolute;top:365px;right:192px"
     class="objects"
     draggable="true"
     bind:this={objects[14].el}
@@ -368,11 +367,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅗ
+    h
 </div>
 <div
-    id="ㅓ"
-    style="position:absolute;top:370px;right:152px"
+    id="j"
+    style="position:absolute;top:365px;right:152px"
     class="objects"
     draggable="true"
     bind:this={objects[15].el}
@@ -382,11 +381,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅓ
+    j
 </div>
 <div
-    id="ㅏ"
-    style="position:absolute;top:370px;right:112px"
+    id="k"
+    style="position:absolute;top:365px;right:112px"
     class="objects"
     draggable="true"
     bind:this={objects[16].el}
@@ -396,11 +395,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅏ
+    k
 </div>
 <div
-    id="ㅣ"
-    style="position:absolute;top:370px;right:72px"
+    id="l"
+    style="position:absolute;top:365px;right:72px"
     class="objects"
     draggable="true"
     bind:this={objects[17].el}
@@ -410,11 +409,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅣ
+    l
 </div>
 <div
-    id="ㅋ"
-    style="position:absolute;top:428px;right:352px"
+    id="z"
+    style="position:absolute;top:420px;right:352px"
     class="objects"
     draggable="true"
     bind:this={objects[18].el}
@@ -424,11 +423,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅋ
+    z
 </div>
 <div
-    id="ㅌ"
-    style="position:absolute;top:428px;right:312px"
+    id="x"
+    style="position:absolute;top:420px;right:312px"
     class="objects"
     draggable="true"
     bind:this={objects[19].el}
@@ -438,11 +437,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅌ
+    x
 </div>
 <div
-    id="ㅊ"
-    style="position:absolute;top:428px;right:272px"
+    id="c"
+    style="position:absolute;top:420px;right:272px"
     class="objects"
     draggable="true"
     bind:this={objects[20].el}
@@ -452,11 +451,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅊ
+    c
 </div>
 <div
-    id="ㅍ"
-    style="position:absolute;top:428px;right:232px"
+    id="v"
+    style="position:absolute;top:420px;right:232px"
     class="objects"
     draggable="true"
     bind:this={objects[21].el}
@@ -466,11 +465,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅍ
+    v
 </div>
 <div
-    id="ㅠ"
-    style="position:absolute;top:428px;right:192px"
+    id="b"
+    style="position:absolute;top:420px;right:192px"
     class="objects"
     draggable="true"
     bind:this={objects[22].el}
@@ -480,11 +479,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅠ
+    b
 </div>
 <div
-    id="ㅜ"
-    style="position:absolute;top:428px;right:152px"
+    id="n"
+    style="position:absolute;top:420px;right:152px"
     class="objects"
     draggable="true"
     bind:this={objects[23].el}
@@ -494,11 +493,11 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅜ
+    n
 </div>
 <div
-    id="ㅡ"
-    style="position:absolute;top:428px;right:112px"
+    id="m"
+    style="position:absolute;top:420px;right:112px"
     class="objects"
     draggable="true"
     bind:this={objects[24].el}
@@ -508,7 +507,7 @@
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
 >
-    ㅡ
+    m
 </div>
 <!--
 {#each objects.filter((v) => !dropped.includes(`${v.id}`)) as { id }, i}
@@ -542,7 +541,7 @@
         background-color: #eee;
         border: #999 1px solid;
         width: 400px;
-        height: 198px;
+        height: 250px;
         padding: 8px;
         font-size: 19px;
     }
@@ -552,11 +551,11 @@
         background-color: #ffffff;
         border: #ffdfbc6a 0px solid;
         width: 30px;
-        height: 35px;
+        height: 30px;
         margin: 0px;
         padding: 0px;
         font-size: 25px;
-        color: #ff0000;
+        color: #000000;
         text-align: center;
         cursor: move;
     }

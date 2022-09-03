@@ -68,8 +68,9 @@
 
     function handleTouchStart(e) {
         status = "Touch start with element " + e.target.getAttribute("id");
-        originalX = e.target.offsetLeft - 10 + "px";
-        originalY = e.target.offsetTop - 10 + "px";
+        console.log(e.target.offsetLeft, e.target.offsetTop);
+        originalX = e.target.offsetLeft  + "px";
+        originalY = e.target.offsetTop  + "px";
         activeEvent = "start";
     }
 
@@ -108,10 +109,11 @@
                     "You dropped " +
                     e.target.getAttribute("id") +
                     " into drop zone";
-            } else {
-                e.target.style.left = originalX;
-                e.target.style.top = originalY;
-            }
+                }    
+                
+            e.target.style.left = originalX;
+            e.target.style.top = originalY;
+            e.target.style.position = "absolute";
         }
     }
 

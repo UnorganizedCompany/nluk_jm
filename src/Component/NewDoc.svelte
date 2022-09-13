@@ -1,5 +1,4 @@
 <script>
-
     let drop_zone;
     let objects = [
         { el: null, id: "q" },
@@ -31,7 +30,7 @@
         { el: null, id: "n" },
         { el: null, id: "m" },
 
-        { el: null, id: "return" }, 
+        { el: null, id: "return" },
     ];
 
     let dropped = [];
@@ -42,41 +41,39 @@
     let originalX = "";
     let originalY = "";
     let originalPos = {
-        "q": {"x": "50px", "y":"312px"},
-        "w": {"x": "90px", "y":"312px"},
-        "e": {"x": "130px", "y":"312px"},
-        "r": {"x": "170px", "y":"312px"},
-        "t": {"x": "210px", "y":"312px"},
-        "y": {"x": "250px", "y":"312px"},
-        "u": {"x": "290px", "y":"312px"},
-        "i": {"x": "330px", "y":"312px"},
-        "o": {"x": "370px", "y":"312px"},
-        "p": {"x": "410px", "y":"312px"},
+        q: { x: "50px", y: "312px" },
+        w: { x: "90px", y: "312px" },
+        e: { x: "130px", y: "312px" },
+        r: { x: "170px", y: "312px" },
+        t: { x: "210px", y: "312px" },
+        y: { x: "250px", y: "312px" },
+        u: { x: "290px", y: "312px" },
+        i: { x: "330px", y: "312px" },
+        o: { x: "370px", y: "312px" },
+        p: { x: "410px", y: "312px" },
 
-        "a": {"x": "70px", "y":"365px"},
-        "s": {"x": "110px", "y":"365px"},
-        "d": {"x": "150px", "y":"365px"},
-        "f": {"x": "190px", "y":"365px"},
-        "g": {"x": "230px", "y":"365px"},
-        "h": {"x": "270px", "y":"365px"},
-        "j": {"x": "310px", "y":"365px"},
-        "k": {"x": "350px", "y":"365px"},
-        "l": {"x": "390px", "y":"365px"},
+        a: { x: "70px", y: "365px" },
+        s: { x: "110px", y: "365px" },
+        d: { x: "150px", y: "365px" },
+        f: { x: "190px", y: "365px" },
+        g: { x: "230px", y: "365px" },
+        h: { x: "270px", y: "365px" },
+        j: { x: "310px", y: "365px" },
+        k: { x: "350px", y: "365px" },
+        l: { x: "390px", y: "365px" },
 
-        "z": {"x": "110px", "y":"420px"},
-        "x": {"x": "150px", "y":"420px"},
-        "c": {"x": "190px", "y":"420px"},
-        "v": {"x": "230px", "y":"420px"},
-        "b": {"x": "270px", "y":"420px"},
-        "n": {"x": "310px", "y":"420px"},
-        "m": {"x": "350px", "y":"420px"},
-    }
+        z: { x: "110px", y: "420px" },
+        x: { x: "150px", y: "420px" },
+        c: { x: "190px", y: "420px" },
+        v: { x: "230px", y: "420px" },
+        b: { x: "270px", y: "420px" },
+        n: { x: "310px", y: "420px" },
+        m: { x: "350px", y: "420px" },
+    };
 
-    function handleDragEnter(e) {
-    }
+    function handleDragEnter(e) {}
 
-    function handleDragLeave(e) {
-     }
+    function handleDragLeave(e) {}
 
     function handleDragDrop(e) {
         e.preventDefault();
@@ -102,16 +99,15 @@
     function handleTouchStart(e) {
         status = "Touch start with element " + e.target.getAttribute("id");
         console.log(e.target.offsetLeft, e.target.offsetTop);
-        originalX = e.target.offsetLeft  + "px";
-        originalY = e.target.offsetTop  + "px";
+        originalX = e.target.offsetLeft + "px";
+        originalY = e.target.offsetTop + "px";
         activeEvent = "start";
     }
 
     function handleTouchMove(e) {
         let touchLocation = e.targetTouches[0];
-        let pageX = Math.floor(touchLocation.pageX -10) + "px";
-        let pageY = Math.floor(touchLocation.pageY -10) + "px";
-        status = "Touch x " + pageX + " Touch y " + pageY;
+        let pageX = Math.floor(touchLocation.pageX - 10) + "px";
+        let pageY = Math.floor(touchLocation.pageY - 10) + "px";
         e.target.style.position = "absolute";
         e.target.style.left = pageX;
         e.target.style.top = pageY;
@@ -136,15 +132,14 @@
             ) {
                 dropped = dropped.concat(e.target.id);
                 text += e.target.id;
+                if (text.endsWith("return")) {
+                    text = text.replaceAll("return", "");
+                    saveDoc();
+                }
                 e.target.style.position = "initial";
                 dropped_in = true;
-                status =
-                    "You dropped " +
-                    e.target.getAttribute("id") +
-                    " into drop zone";
-                }    
-            
-            
+            }
+
             e.target.style.left = originalPos[e.target.id].x;
             e.target.style.top = originalPos[e.target.id].y;
             e.target.style.position = "absolute";
@@ -153,25 +148,30 @@
 
     function detectTouchEnd(x1, y1, x2, y2, w, h) {
         //Very simple detection here
-        if (x2 - x1 > 2*w) return false;
-        if (y2 - y1 > 2*h) return false;
+        if (x2 - x1 > 2 * w) return false;
+        if (y2 - y1 > 2 * h) return false;
         return true;
     }
 
     function onReturnClicked() {
-        console.log("return clicked")
-        console.log(text)
-        var list = JSON.parse(localStorage.pseudo_twitter_list)
-        list.push(text)
-        localStorage.pseudo_twitter_list = JSON.stringify(list)
-        
-        window.location.href = "/nluk_jm"
+        console.log("return clicked");
+        text += "re-return";
+    }
+
+    function saveDoc() {
+        console.log(text);
+        var list = JSON.parse(localStorage.pseudo_twitter_list);
+        list.push(text);
+        localStorage.pseudo_twitter_list = JSON.stringify(list);
+
+        window.location.href = "/nluk_jm";
     }
 
     let keyboardSrc = "keyboard2.png";
 </script>
+
 <div align="left" style="margin-bottom: 20px">
-    <img src="logo.png" width=200 draggable="false"/>
+    <img src="logo.png" width="200" draggable="false" />
 </div>
 <div
     on:dragenter={handleDragEnter}
@@ -181,15 +181,15 @@
     id="drop_zone"
     ondragover="return false"
 >
-{text}
-<!--
+    {text}
+    <!--
     {#each dropped as d }
         <h1>{d}</h1>
     {/each}
     -->
 </div>
 
-<img src={keyboardSrc} alt="keyboard" width="400px" draggable="false"/>
+<img src={keyboardSrc} alt="keyboard" width="400px" draggable="false" />
 
 <div
     id="q"
@@ -566,6 +566,7 @@
 >
     return
 </div>
+
 <!--
 {#each objects.filter((v) => !dropped.includes(`${v.id}`)) as { id }, i}
     <div
@@ -619,7 +620,7 @@
 
     .return {
         display: inline-block;
-        background-color: #AEB4BD;
+        background-color: #aeb4bd;
         border: #ffdfbc6a 0px solid;
         width: 90px;
         height: 30px;
